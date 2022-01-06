@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/ilci66/personal-portfolio-website#readme",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "gulp": "^4.0.2",
+    "gulp-purgecss": "^4.1.3",
+    "gulp-sass": "^5.1.0",
+    "nodemon": "^2.0.15",
+    "sass": "^1.46.0"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
