@@ -11,7 +11,7 @@ function buildStyles() {
     // to show what css values it should render, it can be an array of paths relative
     // to this file, the way I did it it will look for all the root level html files 
     .pipe(purgecss({ content: ['public/**/*.html'] }))
-    .pipe(dest('css'))
+    .pipe(dest('public/assets/css'))
 }
 
 function watchTask() {
