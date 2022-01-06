@@ -3,3 +3,5 @@
 * Dockerized
 * Don't wanna use a css library for this one
 * Saw some method called "Atomic Design", even though my desings suck I wanna give that one a try
+
+Working on the transpile error, take another look after break 
