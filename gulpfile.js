@@ -6,6 +6,7 @@ const purgecss = require('gulp-purgecss')
 
 function buildStyles() {
   return src('sass/**/*.scss')   
+  // return src('/**/*.scss')   
     // .pipe(sass()) // wanted to compress
     .pipe(sass({ outputStyle: 'compressed' }))
     // to show what css values it should render, it can be an array of paths relative

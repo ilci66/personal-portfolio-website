@@ -1,4 +1,84 @@
-@import 'breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$imperial-red: rgba(230, 57, 70, 1);
+$honeydew: rgba(241, 250, 238, 1);
+$powder-blue: rgba(168, 218, 220, 1);
+$celadon-blue: rgba(69, 123, 157, 1);
+$prussian-blue: rgba(29, 53, 87, 1);
+
+$eggshell: rgba(244, 241, 222, 1);
+$terra-cotta: rgba(224, 122, 95, 1);
+$independence: rgba(61, 64, 91, 1);
+$green-sheen: rgba(129, 178, 154, 1);
+$deep-champagne: rgba(242, 204, 143, 1);
+
+$s-pad: 10px;
+$m-pad: 20px;
+$l-pad: 30px;
+$xl-pad: 50px;
+$xxl-pad: 100px;
 
 
-@import "_colors";
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+  "xxl": 1440px,
+  "xxxl": 1920px,
+);
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	// font-size: 100%;
+	// font: inherit;
+	// vertical-align: baseline;
+}
+
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body { font-family: Poppins; }
+
+ul { 
+  padding: 0;
+  list-style-type: none;
+}
+
+a { text-decoration: none; }
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+img { max-width: 100%; }
+
+div { flex-grow: 1 }
+
+
+.top-sec {
+  background-color: $independence;
+  background-image: url("../images/banner.jpg");
+}
+h1 {
+  color:gray;
+}
+.container {
+  padding: $xxl-pad;
+}

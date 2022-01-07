@@ -3,5 +3,4 @@
 * Dockerized
 * Don't wanna use a css library for this one
 * Saw some method called "Atomic Design", even though my desings suck I wanna give that one a try
-
-Css file appears empty check that out later
+* Gonna seperate the scss later as the website grows
