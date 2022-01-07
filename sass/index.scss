@@ -73,8 +73,7 @@ div { flex-grow: 1 }
 
 
 .top-sec {
-  background-color: $independence;
-  background-image: url("../images/banner.jpg");
+  background: $independence url("../images/banner.jpg");
 }
 h1 {
   color:gray;
