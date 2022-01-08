@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import "scss/fontawesome.scss";
+@import "scss/solid.scss";
+
 $imperial-red: rgba(230, 57, 70, 1);
 $honeydew: rgba(241, 250, 238, 1);
 $powder-blue: rgba(168, 218, 220, 1);
 $celadon-blue: rgba(69, 123, 157, 1);
 $prussian-blue: rgba(29, 53, 87, 1);
+$sidebar-dark: rgb(38, 46, 58);
+$navbar-dark: rgb(65, 72, 83);
 
 $eggshell: rgba(244, 241, 222, 1);
 $terra-cotta: rgba(224, 122, 95, 1);
@@ -18,6 +23,11 @@ $l-pad: 30px;
 $xl-pad: 50px;
 $xxl-pad: 100px;
 
+$s-margin: 10px;
+$m-margin: 20px;
+$l-margin: 30px;
+$xl-margin: 50px;
+$xxl-margin: 100px;
 
 $breakpoints: (
   "xs": 0,
@@ -47,37 +57,109 @@ section, summary, time, mark, audio, video {
 	// font: inherit;
 	// vertical-align: baseline;
 }
-
+p, h2, h3, h4, div {
+  color: $eggshell;
+}
 * {
   color: inherit;
   margin: 0;
 }
-
 body { font-family: Poppins; }
-
 ul { 
   padding: 0;
   list-style-type: none;
 }
-
 a { text-decoration: none; }
-
 hr {
   border: 0;
   border-top: 1px dotted #efefef;
 }
-
 img { max-width: 100%; }
-
 div { flex-grow: 1 }
+.page-container {
+  display: flex;
+  justify-content: space-between;
+}
+.side-bar {
+  width: 25%;
+  max-width: 270px;
+  background: $sidebar-dark;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: $xl-pad $m-pad;
+  p, h2, h3, h4, div {
+    font-weight: bold;
+  }
+}
+.logo-name {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+  padding: $s-pad $m-pad;
+} 
+.logo-profile-pic {
+  width:80px;
+  border-radius: 50%;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  // justify-content: flex-end;
+  // background: red;
+}
+.nav-sec {
+  margin-top: $m-margin;
+  background: $navbar-dark;
+  padding: $xl-pad 0;
+  ul{
+    li{
+      padding: $m-pad 0;
+      margin: $s-margin;
+      background: $powder-blue;
+      display: flex;
+      justify-self: space-between;
+    }
+  }
+}
+
+//  =================> Still wokring on the icons
+
+.fa-buromobelexperte {
+  @extend %fa-icon;
+  @extend .fa-solid;
+
+  &:before {
+    content: fa-content($fa-var-buromobelexperte);
+  }
+}
 
 
+
+.main {
+  width: 60%;
+}
 .top-sec {
   background: $independence url("../images/banner.jpg");
+  background-size: no-reapeat;
+  p, h2, h3, h4, div {
+    font-weight: bold;
+  }
 }
-h1 {
-  color:gray;
+.por-sec {
+  background: $celadon-blue;
 }
-.container {
+.abo-sec {
+  background: $terra-cotta;
+}
+.con-sec {
+  background: $prussian-blue;
+}
+.abo-container, .top-container, .por-container, .con-container, .foo-container {
   padding: $xxl-pad;
+}
+.footer {
+  background: $green-sheen;
+  padding: $xl-pad;
 }
