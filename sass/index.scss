@@ -3,20 +3,20 @@
 @import "fontawesome.scss";
 @import "solid.scss";
 
-$imperial-red: rgba(230, 57, 70, 1);
-$honeydew: rgba(241, 250, 238, 1);
-$powder-blue: rgba(168, 218, 220, 1);
-$celadon-blue: rgba(69, 123, 157, 1);
-$prussian-blue: rgba(29, 53, 87, 1);
-$sidebar-dark: rgb(38, 46, 58);
-$navbar-dark: rgb(65, 72, 83);
+$deep-space-sparkle: rgba(51, 92, 103, 1);
+$medium-champagne: rgba(255, 243, 176, 1);
+$indian-yellow: rgba(224, 159, 62, 1);
+$auburn: rgba(158, 42, 43, 1);
+$rosewood: rgba(84, 11, 14, 1);
+$yellow-green-crayola: rgba(212, 224, 155, 1);
+$light-goldenrod-yellow: rgba(246, 244, 210, 1);
+$tea-green: rgba(203, 223, 189, 1);
+$dark-salmon: rgba(241, 156, 121, 1);
+$medium-carmine: rgba(164, 74, 63, 1);
 
 $eggshell: rgba(244, 241, 222, 1);
-$terra-cotta: rgba(224, 122, 95, 1);
-$independence: rgba(61, 64, 91, 1);
-$green-sheen: rgba(129, 178, 154, 1);
-$deep-champagne: rgba(242, 204, 143, 1);
 
+$xs-pad: 4px;
 $s-pad: 10px;
 $m-pad: 20px;
 $l-pad: 30px;
@@ -57,6 +57,9 @@ section, summary, time, mark, audio, video {
 	// font: inherit;
 	// vertical-align: baseline;
 }
+html {
+  scroll-behavior: smooth;
+}
 p, h2, h3, h4, div {
   color: $eggshell;
 }
@@ -82,12 +85,13 @@ div { flex-grow: 1 }
 }
 .side-bar {
   width: 25%;
-  max-width: 270px;
-  background: $sidebar-dark;
+  min-width: 270px;
+  max-width: 300px;
+  background: $auburn;
   height: 100vh;
   position: sticky;
   top: 0;
-  padding: $xl-pad $m-pad;
+  padding: 0 $m-pad;
   p, h2, h3, h4, div {
     font-weight: bold;
   }
@@ -111,20 +115,28 @@ div { flex-grow: 1 }
 }
 .nav-sec {
   margin-top: $m-margin;
-  background: $navbar-dark;
+  // background: $navbar-dark;
   padding: $xl-pad 0;
   ul{
     li{
-      padding: $m-pad 0;
-      margin: $s-margin;
-      background: $powder-blue;
-      display: flex;
-      justify-self: space-between;
+      padding: $xs-pad ;
+      border-radius: 5px;
+      // margin: $s-margin;
+      // background: $powder-blue;
+      // display: flex;
+      // justify-self: space-between;
+      a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: $m-pad $l-pad;
+        font-size: large;
+        // background: $silver-pink;
+        
+      }
     }
   }
 }
-
-//  =================> Still wokring on the icons
 
 .fa-buromobelexperte {
   @extend %fa-icon;
@@ -170,25 +182,39 @@ div { flex-grow: 1 }
   width: 60%;
 }
 .top-sec {
-  background: $independence url("../images/banner.jpg");
-  background-size: no-reapeat;
+  // background: $independence url("../images/banner.jpg");
+  // background-size: no-reapeat;
+  background: url("../images/portfolio-2.jpg");
+  background-size: cover;
+
   p, h2, h3, h4, div {
     font-weight: bold;
   }
 }
 .por-sec {
-  background: $celadon-blue;
+  // background: $celadon-blue;
 }
 .abo-sec {
-  background: $terra-cotta;
+  // background: $terra-cotta;
 }
 .con-sec {
-  background: $prussian-blue;
+  // background: $deep-champagne;
 }
 .abo-container, .top-container, .por-container, .con-container, .foo-container {
   padding: $xxl-pad;
 }
+.top-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: ($xxl-pad * 2);
+  .top-title {
+    margin-bottom: $l-margin;
+  }
+}
+
 .footer {
-  background: $green-sheen;
-  padding: $xl-pad;
+  // background: $green-sheen;
+  // padding: $m-pad 0;
 }
