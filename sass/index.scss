@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import "scss/fontawesome.scss";
-@import "scss/solid.scss";
+@import "fontawesome.scss";
+@import "solid.scss";
 
 $imperial-red: rgba(230, 57, 70, 1);
 $honeydew: rgba(241, 250, 238, 1);
@@ -135,6 +135,35 @@ div { flex-grow: 1 }
   }
 }
 
+.intro-icon {
+  @extend %fa-icon;
+  @extend .fa-solid;
+
+  &:before {
+    content: fa-content($fa-var-user);
+  }
+}
+.port-icon {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-house);
+  }
+}
+.about-icon {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-book);
+  }
+}
+.contact-icon {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-envelope);
+  }
+}
 
 
 .main {
