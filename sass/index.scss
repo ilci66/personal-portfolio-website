@@ -4,6 +4,10 @@
 @import "fontawesome.scss";
 @import "solid.scss";
 
+$ver-dark-blue: rgb(2,0,36);
+$gradient-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(217,252,255,1) 100%, rgba(45,238,253,1) 100%);
+$gradient-bg-2: linear-gradient(0deg, rgba(230,231,255,1) 0%, rgba(216,249,251,1) 25%, rgba(241,253,254,1) 78%, rgba(233,235,255,1) 100%);
+
 $deep-space-sparkle: rgba(51, 92, 103, 1);
 $medium-champagne: rgba(255, 243, 176, 1);
 $indian-yellow: rgba(224, 159, 62, 1);
@@ -266,34 +270,36 @@ div { flex-grow: 1 }
   width: 60%;
 }
 .top-sec {
-  // background: $independence url("../images/banner.jpg");
-  // background-size: no-reapeat;
   background: url("../images/portfolio-4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
-  p, h2, h3, h4, div {
-    font-weight: bold;
-  }
 }
 // $cerulean-crayola: rgba(0, 180, 216, 1);
 // $sky-blue-crayola: rgba(72, 202, 228, 1);
 // $sky-blue-crayola-2: rgba(144, 224, 239, 1);
 // $blizzard-blue: rgba(173, 232, 244, 1);
 .por-sec {
-  background: $sky-blue-crayola-2;
+  // background: $sky-blue-crayola-2;
+  background: $gradient-bg-2;
 }
 .abo-sec {
-  background: $deep-space-sparkle;
+  background: $gradient-bg;
 }
 .con-sec {
-  background: $powder-blue;
+  background: $rosewood url("../images/email-pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background: $gradient-bg;
 }
 // this is to be deleted later
 .abo-container, .top-container, .con-container, .foo-container {
-  padding: $xxxl-size;
+  box-shadow: 10px 10px 10px gray;
 }
 .top-container{
+  padding: $xxxl-size;
+  p, h2, h3, h4, div {
+    font-weight: bold;
+  }
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -346,10 +352,29 @@ div { flex-grow: 1 }
     }
   }
 }
-
-
+.abo-container {
+  padding: $xxxl-size;
+  display: flex;
+  flex-direction: row;
+  .about-img {
+    max-width:300px;
+  }
+  .about-info {
+    margin-left: $m-size;
+    
+    .about-title {
+      font-size: $xxl-t;
+    }
+    .about-text {
+      margin-top: $m-size;
+    }
+  }
+}
+.contact-container {
+  padding: $xxl-size $xxxl-size;
+  .contact-info {
+  }
+}
 .footer {
-  background: $rosewood url("../images/portfolio-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
 }
