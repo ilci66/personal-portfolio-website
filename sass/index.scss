@@ -3,10 +3,12 @@
 
 @import "fontawesome.scss";
 @import "solid.scss";
+@import "brands.scss";
 
-$ver-dark-blue: rgb(2,0,36);
+$very-dark-blue: rgb(2,0,36);
 $gradient-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(217,252,255,1) 100%, rgba(45,238,253,1) 100%);
 $gradient-bg-2: linear-gradient(0deg, rgba(230,231,255,1) 0%, rgba(216,249,251,1) 25%, rgba(241,253,254,1) 78%, rgba(233,235,255,1) 100%);
+$gradient-bg-3: linear-gradient(90deg, rgba(7,0,121,1) 0%, rgba(0,0,0,1) 100%);
 
 $deep-space-sparkle: rgba(51, 92, 103, 1);
 $medium-champagne: rgba(255, 243, 176, 1);
@@ -29,6 +31,7 @@ $sky-blue-crayola-2: rgb(224, 249, 253);
 $blizzard-blue: rgba(173, 232, 244, 1);
 $powder-blue: rgb(245, 255, 249);
 $honeydew: rgba(241, 250, 238, 1);
+$matte-black: #1B1B1B;
 
 $light-text: $honeydew;
 $dark-text: rgb(0, 0, 46);
@@ -37,6 +40,7 @@ $gray-text: rgb(192, 192, 192);
 $xs-t: 8px;
 $s-t: 12px;
 $m-t: 16px;
+$m-l-t: 20px;
 $l-t: 24px;
 $xl-t: 32px;
 $xxl-t: 40px;
@@ -45,6 +49,7 @@ $text-size: (
   "xs": $xs-t,
   "s": $s-t, 
   "m": $m-t,
+  "m-l": $m-l-t,
   "l": $l-t,
   "xl": $xl-t,
   "xxl": $xxl-t
@@ -54,6 +59,7 @@ $text-size: (
 $xs-size: 4px;
 $s-size: 10px;
 $m-size: 20px;
+$m-l-size: 25px;
 $l-size: 30px;
 $xl-size: 50px;
 $xxl-size: 100px;
@@ -159,12 +165,44 @@ div { flex-grow: 1 }
   width: 25%;
   min-width: 270px;
   max-width: 280px;
-  background: $dark-blue;
+  background: $matte-black;
   height: 100vh;
   position: sticky;
   top: 0;
-  p, h2, h3, h4, div {
-    font-weight: bold;
+  // p, h2, h3, h4, div {
+  //   // font-weight: bold;
+  // }
+  .nav-sec {
+    ul{
+      li{
+        padding: $s-size ;
+        border-radius: 5px;
+        // margin: $s-m;
+        // background: $powder-blue;
+        // display: flex;
+        // justify-self: space-between;
+        a {
+          display: flex;
+          flex-direction: row;
+          // justify-content: flex-end;
+          justify-content: space-between;
+          padding: $s-size $l-size;
+          font-size: $l-t;
+          // background: $silver-pink;
+        }
+      }
+    }
+    .social-links {
+      width:100%;
+      padding: $m-size;
+      box-sizing: border-box;
+      display: flex;
+      position: absolute;
+      bottom:0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
   }
 }
 .logo-name {
@@ -174,9 +212,9 @@ div { flex-grow: 1 }
   padding: $xxl-size $l-size $l-size;
 } 
 .logo-profile-pic {
-  width:80px;
-  // margin-top: $l-m;
-  border-radius: 50%;
+  width:90px;
+  margin-left: $s-size;
+  // border-radius: 50%;
 }
 .logo-text {
   display: flex;
@@ -194,30 +232,7 @@ div { flex-grow: 1 }
     margin-top: $s-size;
   }
 }
-.nav-sec {
-  // margin-top: $l-m;
-  // background: $dark-salmon;
-  // padding: $xl-p 0;
-  ul{
-    li{
-      padding: $s-size ;
-      border-radius: 5px;
-      // margin: $s-m;
-      // background: $powder-blue;
-      // display: flex;
-      // justify-self: space-between;
-      a {
-        display: flex;
-        flex-direction: row;
-        // justify-content: flex-end;
-        justify-content: space-between;
-        padding: $s-size $l-size;
-        font-size: $l-t;
-        // background: $silver-pink;
-      }
-    }
-  }
-}
+
 
 .fa-buromobelexperte {
   @extend %fa-icon;
@@ -254,7 +269,7 @@ div { flex-grow: 1 }
   @extend %fa-icon;
   @extend .fa-solid;
   &:before {
-    content: fa-content($fa-var-envelope);
+    content: fa-content($fa-var-pen);
   }
 }
 .arrow-down {
@@ -264,13 +279,33 @@ div { flex-grow: 1 }
     content: fa-content($fa-var-arrow-down);
   }
 }
-
+.fa-github {
+  @extend %fa-icon;
+  @extend .fa-brands;
+  &:before {
+    content: fa-content($fa-var-github);
+  }
+}
+.fa-codepen {
+  @extend %fa-icon;
+  @extend .fa-brands;
+  &:before {
+    content: fa-content($fa-var-codepen);
+  }
+}
+.fa-envelope {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-envelope);
+  }
+}
 
 .main {
   width: 60%;
 }
 .top-sec {
-  background: url("../images/portfolio-4.jpg");
+  background: url("../images/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -286,17 +321,13 @@ div { flex-grow: 1 }
   background: $gradient-bg;
 }
 .con-sec {
-  background: $rosewood url("../images/email-pattern.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  // background: $gradient-bg;
-}
-// this is to be deleted later
-.abo-container, .top-container, .con-container, .foo-container {
-  box-shadow: 10px 10px 10px gray;
+  // background: $rosewood url("../images/pic03.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background: $gradient-bg-2;
 }
 .top-container{
-  padding: $xxxl-size;
+  padding: $xxxl-size $xxxl-size $m-size $xxxl-size;
   p, h2, h3, h4, div {
     font-weight: bold;
   }
@@ -319,7 +350,7 @@ div { flex-grow: 1 }
     font-size: $xl-t;
     border-radius: 5px;
     border: none;
-    background-color: $dark-blue;
+    background-color: $navy-blue;
   }
   .top-downward-arrow:hover{
     cursor:pointer;
@@ -327,6 +358,13 @@ div { flex-grow: 1 }
 }
 .por-container {
   padding: $l-size $xxxl-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .por-title {
+    font-size: $xl-t;
+    margin: $l-size;
+  }
   .por-grid {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -349,6 +387,12 @@ div { flex-grow: 1 }
           font-size: 1rem;
         }
       }
+    }
+    .grid-item:hover{
+      box-shadow: 15px 15px 15px $gray-text;
+      // width: 120%;
+      // height: 120%;
+      // translate:(-50px,-50px) ;
     }
   }
 }
@@ -373,8 +417,66 @@ div { flex-grow: 1 }
 .contact-container {
   padding: $xxl-size $xxxl-size;
   .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .contact-title{
+      font-size: $xxl-t;
+      margin-bottom: $m-size;
+      font-weight: bold;
+    }
+    .contact-text {
+      margin-bottom: $s-size;
+      font-size: $l-t;
+    }
   }
+  .send-msg-form {
+    display:flex;
+    flex-direction: column;
+  }
+  .form-column {
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:$m-size ;
+    font-size: $xxl-t;
+    .f-message, .f-name, .f-email {
+      font-size: $l-t;
+      padding: $m-size;
+      border: none;
+      border-radius: $s-size;
+    }
+    .f-message:focus, .f-name:focus, .f-email:focus {
+      outline:none;
+      border:1px solid $dark-cornflower-blue;
+      box-shadow: 0 0 10px #719ECE;
+  
+    }
+    .f-message {
+      grid-column: span 2;
+    }
+  }
+  .send-msg-btn {
+    padding: $m-size $xxl-size;
+    font-size: $xl-t;
+    border-radius: 5px;
+    border: none;
+    background-color: $navy-blue;
+    align-self: center;
+    margin-top:$m-l-size;
+  }
+  .send-msg-btn:hover{
+    cursor: pointer;
+  }
+  
 }
 .footer {
-
+  padding: $m-size;
+  background: $gradient-bg-3;
+  .foo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
