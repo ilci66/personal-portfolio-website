@@ -10,6 +10,7 @@ $gradient-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(217,252,255,1) 
 $gradient-bg-2: linear-gradient(0deg, rgba(230,231,255,1) 0%, rgba(216,249,251,1) 25%, rgba(241,253,254,1) 78%, rgba(233,235,255,1) 100%);
 $gradient-bg-3: linear-gradient(90deg, rgba(7,0,121,1) 0%, rgba(0,0,0,1) 100%);
 
+
 $deep-space-sparkle: rgba(51, 92, 103, 1);
 $medium-champagne: rgba(255, 243, 176, 1);
 $indian-yellow: rgba(224, 159, 62, 1);
@@ -184,11 +185,16 @@ div { flex-grow: 1 }
         a {
           display: flex;
           flex-direction: row;
-          // justify-content: flex-end;
           justify-content: space-between;
           padding: $s-size $l-size;
           font-size: $l-t;
-          // background: $silver-pink;
+          transition:0.2s;
+        }
+        a:hover {
+          color: $blizzard-blue;
+        }
+        a:focus {
+          color: $auburn;
         }
       }
     }
@@ -305,7 +311,7 @@ div { flex-grow: 1 }
   width: 60%;
 }
 .top-sec {
-  background: url("../images/banner.jpg");
+  background: $rosewood url("../images/pic06.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -351,9 +357,11 @@ div { flex-grow: 1 }
     border-radius: 5px;
     border: none;
     background-color: $navy-blue;
+    transition: 0.2s;
   }
   .top-downward-arrow:hover{
     cursor:pointer;
+    background: $star-command-blue;
   }
 }
 .por-container {
@@ -372,6 +380,7 @@ div { flex-grow: 1 }
     .grid-item{
       background: whitesmoke;
       box-shadow: 5px 5px 20px $gray-text;
+      transition: 0.2s;
       .grid-info{
         display: flex;
         flex-direction: column;
@@ -390,9 +399,7 @@ div { flex-grow: 1 }
     }
     .grid-item:hover{
       box-shadow: 15px 15px 15px $gray-text;
-      // width: 120%;
-      // height: 120%;
-      // translate:(-50px,-50px) ;
+      transform: translate(0, -100px);
     }
   }
 }
@@ -446,6 +453,7 @@ div { flex-grow: 1 }
       padding: $m-size;
       border: none;
       border-radius: $s-size;
+      transition: 0.2s;
     }
     .f-message:focus, .f-name:focus, .f-email:focus {
       outline:none;
@@ -465,9 +473,11 @@ div { flex-grow: 1 }
     background-color: $navy-blue;
     align-self: center;
     margin-top:$m-l-size;
+    transition: 0.2s;
   }
   .send-msg-btn:hover{
     cursor: pointer;
+    background: $star-command-blue;
   }
   
 }
@@ -480,3 +490,7 @@ div { flex-grow: 1 }
     align-items: center;
   }
 }
+
+// @keyframes moveup {
+
+// }
