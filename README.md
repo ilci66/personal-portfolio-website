@@ -6,4 +6,6 @@
 * Gonna seperate the scss later as the website grows
 * Colors are out of control, going with a smaller, palette
 * Not gonna use the sass library I created a while back, writing all brand new
-* I want to save the information send by the user via the concat form in my mongodb cloud database 
+* I want to save the information send by the user via the contact form in my mongodb cloud database 
+* setting up babel, check out the babel with sass
+* seperate backend files maybe after your break

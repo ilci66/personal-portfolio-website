@@ -6,7 +6,8 @@
   "scripts": {
     "devstart": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npx babel src -d public/assets/js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,11 @@
   },
   "homepage": "https://github.com/ilci66/personal-portfolio-website#readme",
   "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-spread": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
     "gulp": "^4.0.2",
     "gulp-purgecss": "^4.1.3",
     "gulp-sass": "^5.1.0",
@@ -31,6 +37,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "helmet": "^5.0.1",
     "mongoose": "^6.1.5"
   }
 }
