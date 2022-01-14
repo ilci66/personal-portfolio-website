@@ -334,7 +334,13 @@ div { flex-grow: 1 }
     content: fa-content($fa-var-images);
   }
 }
-
+.fa-times {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-times);
+  }
+}
 .main {
   width: 60%;
 }
@@ -525,7 +531,25 @@ div { flex-grow: 1 }
   .send-msg-btn:hover{
     cursor: pointer;
     background: $star-command-blue;
+  }
+  .form-res-modal {
+    position: fixed;
+    top:0;
+    right:0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .form-res-container {
+      
+      .form-res-text {
+        font-size: $m-l-t;
+      }
 
+    }
   }
 }
 .footer {
