@@ -1,8 +1,7 @@
 const { src, dest, watch, series } = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 const purgecss = require('gulp-purgecss')
-
-
+const babel = require('gulp-babel');
 
 function buildStyles() {
   return src('sass/**/*.scss')   
@@ -14,9 +13,21 @@ function buildStyles() {
     .pipe(dest('public/assets/css'))
 }
 
+// "build": "npx babel --watch src -d public/assets/js"
+// function buildJs() {
+//   return src('src/**/*.js')
+//     .pipe(babel({
+//       presets: ['@babel/preset-env'],
+//       plugins: ['@babel/transform-runtime']
+//     }))
+//     .pipe(dest('public/assets/js'))
+// }
+
 function watchTask() {
   // wanna watch for changes in the html pages too
   watch(['sass/**/*.scss', '*.html'], buildStyles)
+  // watch(['src/**/*.js', '*.html'], buildJs)
 }
 
+// exports.default = series(buildStyles, buildJs, watchTask)
 exports.default = series(buildStyles, watchTask)
