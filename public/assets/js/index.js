@@ -911,6 +911,9 @@ var topTilte = document.querySelector('.top-title');
 var formName = document.querySelector('.f-name');
 var formEmail = document.querySelector('.f-email');
 var formMessage = document.querySelector('.f-message');
+var formResModal = document.querySelector('.form-res-modal');
+var modalClose = document.querySelector('.fa-times');
+var modalText = document.querySelector('.form-res-text');
 
 var testFunc = function testFunc(e) {
   return console.log('clicked!!');
@@ -950,7 +953,11 @@ submitForm.addEventListener('submit', /*#__PURE__*/function () {
               formName.value = "";
               formEmail.value = "";
               formMessage.value = "";
-              window.alert("successful");
+              var smileIcon = document.createElement('span');
+              smileIcon.classList.add("fa-smile-beam");
+              modalText.textContent = "Thank you for contacting me, I will respond to you as soon as I can.";
+              modalText.append(smileIcon);
+              formResModal.style.display = "flex";
             })["catch"](function (error) {
               console.error('Error:', error);
             }); // console.log('submit stuff')
@@ -967,6 +974,9 @@ submitForm.addEventListener('submit', /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }());
+modalClose.addEventListener('click', function () {
+  formResModal.style.display = "none";
+});
 console.log("so far so good");
 })();
 

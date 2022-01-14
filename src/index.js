@@ -5,6 +5,9 @@ const formName = document.querySelector('.f-name')
 const formEmail = document.querySelector('.f-email')
 const formMessage = document.querySelector('.f-message')
 
+const formResModal = document.querySelector('.form-res-modal');
+const modalClose = document.querySelector('.fa-times');
+const modalText = document.querySelector('.form-res-text');
 
 const testFunc = (e) => console.log('clicked!!')
 
@@ -36,13 +39,22 @@ submitForm.addEventListener('submit', async (e) => {
     formName.value = ""
     formEmail.value = ""
     formMessage.value = ""
-    window.alert("successful")
+
+    const smileIcon = document.createElement('span')
+    smileIcon.classList.add("fa-smile-beam")
+    modalText.textContent = "Thank you for contacting me, I will respond to you as soon as I can."
+    modalText.append(smileIcon)
+    formResModal.style.display = "flex";
   })
   .catch((error) => {
     console.error('Error:', error);
   });
   
   // console.log('submit stuff')
+})
+
+modalClose.addEventListener('click', () => {
+  formResModal.style.display = "none";
 })
 
 console.log("so far so good")

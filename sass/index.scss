@@ -341,6 +341,13 @@ div { flex-grow: 1 }
     content: fa-content($fa-var-times);
   }
 }
+.fa-smile-beam {
+  @extend %fa-icon;
+  @extend .fa-solid;
+  &:before {
+    content: fa-content($fa-var-smile-beam);
+  }
+}
 .main {
   width: 60%;
 }
@@ -539,19 +546,41 @@ div { flex-grow: 1 }
     background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     .form-res-container {
-      
+      padding: $l-size;
+      max-width: 30%;
+      min-width: 100px;
+      background:$cerulean-crayola;
+      border-radius: 5px;
+      border: 2px solid $honeydew;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .form-res-text {
-        font-size: $m-l-t;
+        align-self: center;
+        justify-self: center;
+        font-size: $xl-t;
+        padding: 0 $m-l-size;
+        margin-bottom: $m-size;
+      }
+      .fa-times {
+        margin: $m-l-size;
+        font-size: 50px;
+      }
+      .fa-times:hover {
+        cursor: pointer;
       }
 
     }
   }
 }
+.show-flex { display:flex !important; }
+.hide { display: none !important; }
 .footer {
   padding: $m-size;
   background: $gradient-bg-3;
@@ -559,6 +588,7 @@ div { flex-grow: 1 }
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 }
 
