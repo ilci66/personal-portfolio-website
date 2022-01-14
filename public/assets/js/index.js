@@ -952,11 +952,11 @@ submitForm.addEventListener('submit', /*#__PURE__*/function () {
               console.log('Success:', data);
               formName.value = "";
               formEmail.value = "";
-              formMessage.value = "";
-              var smileIcon = document.createElement('span');
-              smileIcon.classList.add("fa-smile-beam");
-              modalText.textContent = "Thank you for contacting me, I will respond to you as soon as I can.";
-              modalText.append(smileIcon);
+              formMessage.value = ""; // const smileIcon = document.createElement('span')
+              // smileIcon.classList.add("fa-smile-beam")
+
+              modalText.textContent = data.message; // modalText.append(smileIcon)
+
               formResModal.style.display = "flex";
             })["catch"](function (error) {
               console.error('Error:', error);

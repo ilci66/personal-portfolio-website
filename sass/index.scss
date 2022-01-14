@@ -546,39 +546,47 @@ div { flex-grow: 1 }
     background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     height: 100vh;
-    // display: flex;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    animation: modalContentFadeIn 0.3s;
     .form-res-container {
       padding: $l-size;
       max-width: 30%;
       min-width: 100px;
-      background:$cerulean-crayola;
+      background:$navy-blue;
       border-radius: 5px;
       border: 2px solid $honeydew;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .form-res-text {
-        align-self: center;
-        justify-self: center;
-        font-size: $xl-t;
-        padding: 0 $m-l-size;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+        font-size: $l-t;
         margin-bottom: $m-size;
       }
       .fa-times {
-        margin: $m-l-size;
         font-size: 50px;
       }
       .fa-times:hover {
         cursor: pointer;
       }
-
     }
   }
 }
+@keyframes modalContentFadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
 .show-flex { display:flex !important; }
 .hide { display: none !important; }
 .footer {
@@ -586,12 +594,20 @@ div { flex-grow: 1 }
   background: $gradient-bg-3;
   .foo-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-
   }
 }
 
-// @keyframes moveup {
+// these are going to stay here until I'm done with media queries
+// $breakpoints: (
+//   "xs": 0,
+//   "sm": 480px,
+//   "md": 720px,
+//   "lg": 960px,
+//   "xl": 1200px,
+//   "xxl": 1440px,
+//   "xxxl": 1920px,
+// );
 
-// }
+

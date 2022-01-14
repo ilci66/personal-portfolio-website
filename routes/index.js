@@ -15,8 +15,8 @@ router.post('/contact', async (req, res, next) => {
   console.log(name,email,message)
   let newForm = new Form({ name, email, message }) 
   await newForm.save((err, data) => {
-    if(err || !data) res.status(400).json({ error: err })
-    else if(data) res.status(201).json(data)
+    if(err || !data) res.status(400).json({ message: "Something went wrong!" })
+    else if(data) res.status(201).json({ message: "Thank you for contacting me!" })
     // else console.log("no data / no error either")
   })
 })
