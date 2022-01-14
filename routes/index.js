@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const {connection} = require('../db/connection.js');
 const Form = require('../db/form_model.js')
 
-router.post('/', async (req, res, next) => {
-  const { fname:name, femail:email, fmessage:message } = req.body
+router.post('/contact', async (req, res, next) => {
+  const { name, email, message } = req.body
   await connection;
   console.log('ok it works ==>')
 
