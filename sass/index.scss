@@ -139,6 +139,9 @@ section, summary, time, mark, audio, video {
 	vertical-align: baseline;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 b {
   font-weight: bold;
 }
@@ -302,6 +305,8 @@ div { flex-grow: 1 }
   background: $matte-black;
   height: 100vh;
   position: sticky;
+  transition: 0.5s;
+  // animation: navbarShow 0.5s;
   top: 0;
   .nav-sec {
     ul{
@@ -347,6 +352,14 @@ div { flex-grow: 1 }
     }
   }
 }
+@keyframes navbarShow {
+  0% {
+    left:-500px;
+  }
+  100% {
+    left: 0;
+  }
+}
 .logo-name {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -371,22 +384,23 @@ div { flex-grow: 1 }
   }
 }
 .menu-arrow {
-  position: absolute;
+  display: none;
+  position: fixed;
   margin-top: $m-l-size;
   margin-left: $m-l-size;
   font-size: $xxl-t;
-  animation: moverightTurnLeft 0.5s;
+  transition: 0.5s;
+  // animation: moveright 0.5s;
 }
 .menu-arrow:hover {
   cursor: pointer;
 }
-@keyframes moverightTurnLeft {
+@keyframes moveright {
   0% {
     left:0;
   }
   100% {
     left: 250px;
-    // transform: rotate(180deg);
   }
 }
 .top-container{
@@ -631,6 +645,13 @@ div { flex-grow: 1 }
 // $bp-xl: 1200px;
 // $bp-xxl: 1440px;
 // $bp-xxxl: 1920px;
+@media (max-width : $bp-xxxl ){
+  .side-bar {
+    display: "block";
+    position: "sticky";
+    left: 0;
+  }
+}
 
 @media (max-width : $bp-xxl ){
   .about-container {
@@ -655,13 +676,13 @@ div { flex-grow: 1 }
     width: 100%;
   }
   .side-bar {
-    width: 25%;
-    display:none;
+    left: -300px;
+    transition: 0.5s;
+    // display:none;
     min-width: 270px;
     max-width: 280px;
-    background: $matte-black;
     height: 100vh;
-    position: sticky;
+    position: fixed;
     top: 0;
     .nav-sec {
       ul{
@@ -697,4 +718,10 @@ div { flex-grow: 1 }
       }
     }
   }
+  .menu-arrow {
+    display: block;
+  }
+  // .move-right {
+  //   background-color: black;
+  // }
 }

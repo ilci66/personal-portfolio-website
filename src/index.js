@@ -16,8 +16,35 @@ const testFunc = (e) => console.log('clicked!!')
 
 topTilte.addEventListener('click', (e) => console.log("works"))
 
-menuArrow.addEventListener('click', () => testFunc())
+menuArrow.addEventListener('click', () => {
+  testFunc()
+  console.log(menuArrow.classList.contains('move-right'))
+  console.log(menuArrow.classList)
+  if(!menuArrow.classList.contains('move-right')) {
+    menuArrow.classList.add('move-right');
+    menuArrow.style.transform = "rotate(180deg)";
+    menuArrow.style.marginLeft = '300px';
+    
+    sideBar.style.left= "0px";
+    // sideBar.style.display = 'block';
+    sideBar.style.position = 'fixed';
+  }else {
+    menuArrow.classList.remove('move-right');
+    menuArrow.style.backgroundColor = "inherit";
+    menuArrow.style.transform = "none";
+    menuArrow.style.marginLeft = '25px';
 
+    sideBar.style.left= "-300px";
+    // sideBar.style.display = 'none';
+  }
+})
+// if(window.innerWidth > 960) {
+//   console.log(window.innerWidth)
+//   sideBar.style.left = 0
+//   sideBar.style.display = 'block';
+//   sideBar.style.position = 'sticky';
+
+// }
 submitForm.addEventListener('submit', async (e) => {
   e.preventDefault(); 
 
