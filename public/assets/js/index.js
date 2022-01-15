@@ -914,6 +914,8 @@ var formMessage = document.querySelector('.f-message');
 var formResModal = document.querySelector('.form-res-modal');
 var modalClose = document.querySelector('.fa-times');
 var modalText = document.querySelector('.form-res-text');
+var sideBar = document.querySelector('.side-bar');
+var menuArrow = document.querySelector('.menu-arrow');
 
 var testFunc = function testFunc(e) {
   return console.log('clicked!!');
@@ -921,6 +923,9 @@ var testFunc = function testFunc(e) {
 
 topTilte.addEventListener('click', function (e) {
   return console.log("works");
+});
+menuArrow.addEventListener('click', function () {
+  return testFunc();
 });
 submitForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(e) {

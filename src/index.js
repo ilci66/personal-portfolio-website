@@ -9,10 +9,14 @@ const formResModal = document.querySelector('.form-res-modal');
 const modalClose = document.querySelector('.fa-times');
 const modalText = document.querySelector('.form-res-text');
 
+const sideBar = document.querySelector('.side-bar');
+const menuArrow = document.querySelector('.menu-arrow');
+
 const testFunc = (e) => console.log('clicked!!')
 
 topTilte.addEventListener('click', (e) => console.log("works"))
 
+menuArrow.addEventListener('click', () => testFunc())
 
 submitForm.addEventListener('submit', async (e) => {
   e.preventDefault(); 
