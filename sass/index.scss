@@ -48,6 +48,7 @@ $l-t: 24px;
 $xl-l-t: 28px;
 $xl-t: 32px;
 $xxl-t: 40px;
+$xxxl-t: 50px;
 
 // $text-size: (
 //   "xs": $xs-t,
@@ -609,7 +610,7 @@ div { flex-grow: 1 }
         margin-bottom: $m-size;
       }
       .fa-times {
-        font-size: 50px;
+        font-size: $xxxl-t;;
       }
       .fa-times:hover {
         cursor: pointer;
@@ -685,98 +686,32 @@ div { flex-grow: 1 }
     
   .contact-container {
     padding: $l-size $xl-size;
-    .form-column {
-      width: 100%;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap:$m-size ;
-      font-size: $xxl-t;
-      .f-message, .f-name, .f-email {
-        font-size: $l-t;
-        padding: $m-size;
-        border: none;
-        border-radius: $s-size;
-        transition: 0.2s;
-      }
-    }
-    .send-msg-btn {
-      padding: $m-size $xxl-size;
-      font-size: $xl-t;
-      border-radius: 5px;
-      border: none;
-      align-self: center;
-      margin-top:$m-l-size;
-      transition: 0.2s;
-      background-color: $navy-blue;
-    }
-    .send-msg-btn:hover{
-      cursor: pointer;
-      background: $star-command-blue;
-    }
-    .form-res-modal {
-      position: fixed;
-      top:0;
-      right:0;
-      background-color: rgba(0, 0, 0, 0.7);
-      width: 100vw;
-      height: 100vh;
-      display: none;
-      justify-content: center;
-      align-items: center; 
-      animation: modalContentFadeIn 0.3s;
-      .form-res-container {
-        padding: $l-size;
-        max-width: 30%;
-        min-width: 100px;
-        background:$navy-blue;
-        border-radius: 5px;
-        border: 2px solid $honeydew;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .form-res-text {
-          display:flex;
-          justify-content: center;
-          align-content: center;
-          font-size: $l-t;
-          margin-bottom: $m-size;
-        }
-        .fa-times {
-          font-size: 50px;
-        }
-        .fa-times:hover {
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
-
-@media (max-width : $bp-lg ){
-  .main {
-    width: 100%;
-  }
+@media (max-width : $bp-xl){
   .side-bar {
-    left: -300px;
-    transition: 0.5s;
-    // display:none;
-    min-width: 270px;
-    max-width: 280px;
-    height: 100vh;
-    position: fixed;
+    width: 15%;
+    min-width: 160px;
+    max-width: 180px;
     top: 0;
+    .logo-name {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: $m-size;
+    } 
+    .logo-profile-pic {
+      justify-self: flex-end;
+      width:100px;
+    }
     .nav-sec {
       ul{
         li{
-          padding: $s-size ;
-          border-radius: 5px;
+          margin: $s-size ;
           a {
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             justify-content: space-between;
-            padding: $s-size $l-size;
+            padding: $s-size;
             font-size: $l-t;
             transition:0.2s;
           }
@@ -789,22 +724,45 @@ div { flex-grow: 1 }
         }
       }
       .social-links {
-        width:100%;
         padding: $m-size;
-        box-sizing: border-box;
-        display: flex;
-        position: absolute;
-        bottom:0;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+        // flex-direction: column;
+        align-items: flex-end;
+        a {
+          margin: $xs-size;
+          font-size: $l-t;
+        }
+      }
+    }
+  }
+}
+@media (max-width : $bp-lg ){
+  .main {
+    width: 100%;
+  }
+  .side-bar {
+    left: -300px;
+    transition: 0.5s;
+    // display:none;
+    // min-width: 270px;
+    // max-width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    .nav-sec {
+      ul{
+        li{
+          a {
+            font-size: $m-t;
+          }
+        }
+      }
+      .social-links {
+        padding: 0;
+        margin-bottom: $s-size;
       }
     }
   }
   .menu-arrow {
     display: block;
   }
-  // .move-right {
-  //   background-color: black;
-  // }
 }
