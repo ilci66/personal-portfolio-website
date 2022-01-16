@@ -26,8 +26,9 @@ menuArrow.addEventListener('click', () => {
     menuArrow.style.marginLeft = '300px';
     
     sideBar.style.left= "0px";
+    // don't play with the position it's already fixed on media queries
     // sideBar.style.display = 'block';
-    sideBar.style.position = 'fixed';
+    // sideBar.style.position = 'fixed';
   }else {
     menuArrow.classList.remove('move-right');
     menuArrow.style.backgroundColor = "inherit";
@@ -35,7 +36,7 @@ menuArrow.addEventListener('click', () => {
     menuArrow.style.marginLeft = '25px';
 
     sideBar.style.left= "-300px";
-    // sideBar.style.display = 'none';
+    // sideBar.style.display = 'block';
   }
 })
 // if(window.innerWidth > 960) {

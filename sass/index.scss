@@ -645,13 +645,13 @@ div { flex-grow: 1 }
 // $bp-xl: 1200px;
 // $bp-xxl: 1440px;
 // $bp-xxxl: 1920px;
-@media (max-width : $bp-xxxl ){
-  .side-bar {
-    display: "block";
-    position: "sticky";
-    left: 0;
-  }
-}
+// @media (max-width : $bp-xxxl ){
+//   .side-bar {
+//     width: 25%;
+//     position: sticky;
+//     left: 0;
+//   }
+// }
 
 @media (max-width : $bp-xxl ){
   .about-container {
