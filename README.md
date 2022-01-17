@@ -10,3 +10,4 @@
 # Basic responsiveness done
 * planning on running webpack for my backend too but apparently I can't have multiple  configs for for multple entries and outputs, so probably I will just run it once to bundle my backend before production
 * Forgot to add the favicon, gonna adad it here first and then to the one I deployed to heroku
+# check 560 width looks weird
