@@ -23,7 +23,7 @@ menuArrow.addEventListener('click', () => {
   if(!menuArrow.classList.contains('move-right')) {
     menuArrow.classList.add('move-right');
     menuArrow.style.transform = "rotate(180deg)";
-    menuArrow.style.marginLeft = '300px';
+    menuArrow.style.marginLeft = '200px';
     
     sideBar.style.left= "0px";
     // don't play with the position it's already fixed on media queries
