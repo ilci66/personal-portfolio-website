@@ -7,4 +7,4 @@
 * Colors are out of control, going with a smaller, palette
 * Not gonna use the sass library I created a while back, writing all brand new
 * I want to save the information send by the user via the contact form in my mongodb cloud database 
-# working on 480 px contact form
+# Basic responsiveness done

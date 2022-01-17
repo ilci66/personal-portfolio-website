@@ -939,26 +939,38 @@ div { flex-grow: 1 }
     }
   }
   
+
   .contact-container {
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .contact-title{
+        font-size: $xxl-t;
+        margin-bottom: $m-size;
+        font-weight: bold;
+      }
+      .contact-text {
+        margin-bottom: $s-size;
+        font-size: $l-t;
+      }
+    }
+    .send-msg-form {
+      display:flex;
+      flex-direction: column;
+    }
     .form-column {
       width: 100%;
-      display:grid;
+      display:flex;
       grid-template-columns: 1fr;
+      flex-direction: column;
       .f-message, .f-name, .f-email {
         font-size: $l-t;
         padding: $m-size;
         border: none;
         border-radius: $s-size;
-        transition: 0.2s;
       }
-      .f-message:focus, .f-name:focus, .f-email:focus {
-        grid-column: span 2;
-        
-      }
-    }
-    .send-msg-btn:hover{
-      cursor: pointer;
-      background: $star-command-blue;
     }
   }
 }
