@@ -464,7 +464,7 @@ div { flex-grow: 1 }
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: $xl-size;
     .grid-item{
-      background: whitesmoke;
+      background: rgb(255, 254, 254);
       box-shadow: 5px 5px 20px $gray-text;
       transition: 0.2s;
       min-width: 250px;
@@ -481,6 +481,9 @@ div { flex-grow: 1 }
         .project-text {
           margin-top: $m-size;
           font-size: 1rem;
+        }
+        .grid-repo-link {
+          text-decoration: underline;
         }
       }
     }
