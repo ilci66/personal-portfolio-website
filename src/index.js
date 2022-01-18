@@ -1,3 +1,5 @@
+// require('dotenv').config()
+
 const submitForm = document.querySelector('.send-msg-form')
 const topTilte = document.querySelector('.top-title')
 
@@ -58,7 +60,7 @@ submitForm.addEventListener('submit', async (e) => {
     message: formMessage.value 
   }
 
-  fetch('http://localhost:3003/contact', {
+  fetch(`/contact`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
