@@ -688,6 +688,16 @@ div { flex-grow: 1 }
     
   .contact-container {
     padding: $l-size $xl-size;
+    .form-res-modal {
+      .form-res-container {
+        max-width: 40%;
+        min-width: 300px;
+        .form-res-text {
+          font-size: $l-t;
+          margin-bottom: $m-size;
+        }
+      }
+    }
   }
 }
 @media (max-width : $bp-xl){
@@ -855,6 +865,16 @@ div { flex-grow: 1 }
         grid-column: span 2;
       }
     }
+    .form-res-modal {
+      .form-res-container {
+        max-width: 50%;
+        min-width: 300px;
+        .form-res-text {
+          font-size: $l-t;
+          margin-bottom: $m-size;
+        }
+      }
+    }
   }
 }
 // $bp-md: 720px;
@@ -969,6 +989,16 @@ div { flex-grow: 1 }
         grid-column: span 2;
       }
     }
+    .form-res-modal {
+      .form-res-container {
+        max-width: 60%;
+        min-width: 300px;
+        .form-res-text {
+          font-size: $l-t;
+          margin-bottom: $m-size;
+        }
+      }
+    }
   }
 }
 // $bp-sm-md: 650px;
@@ -1010,7 +1040,11 @@ div { flex-grow: 1 }
 
 // $bp-sm: 480px;
 @media (max-width: $bp-sm) {
-  
+  .top-container {
+    .top-title {
+      font-size: $l-t;
+    }
+  }
   .por-container {
     .por-text {
       margin-bottom: $m-l-size;
@@ -1022,39 +1056,21 @@ div { flex-grow: 1 }
       grid-gap: $xl-size;
     }
   }
-  
 
-  // .contact-container {
-  //   .contact-info {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: center;
-  //     .contact-title{
-  //       font-size: $xxl-t;
-  //       margin-bottom: $m-size;
-  //       font-weight: bold;
-  //     }
-  //     .contact-text {
-  //       margin-bottom: $s-size;
-  //       font-size: $l-t;
-  //     }
-  //   }
-  //   .send-msg-form {
-  //     display:flex;
-  //     flex-direction: column;
-  //   }
-  //   .form-column {
-  //     width: 100%;
-  //     display:flex;
-  //     grid-template-columns: 1fr;
-  //     flex-direction: column;
-  //     .f-message, .f-name, .f-email {
-  //       font-size: $l-t;
-  //       padding: $m-size;
-  //       border: none;
-  //       border-radius: $s-size;
-  //     }
-  //   }
-  // }
+  .contact-container {
+    .send-msg-btn {
+      padding: $s-size $m-size ;
+      font-size: $l-t;
+    }
+    .form-res-modal {
+      .form-res-container {
+        max-width: 90%;
+        min-width: 200px;
+        .form-res-text {
+          font-size: $l-t;
+          margin-bottom: $m-size;
+        }
+      }
+    }
+  }
 }
