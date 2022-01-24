@@ -19,7 +19,7 @@ const menuArrow = document.querySelector('.menu-arrow');
 // topTilte.addEventListener('click', (e) => console.log("works"))
 
 menuArrow.addEventListener('click', () => {
-  testFunc()
+  // testFunc()
   // console.log(menuArrow.classList.contains('move-right'))
   // console.log(menuArrow.classList)
   if(!menuArrow.classList.contains('move-right')) {
@@ -51,15 +51,37 @@ menuArrow.addEventListener('click', () => {
 submitForm.addEventListener('submit', async (e) => {
   e.preventDefault(); 
 
-
+  
   // console.log(formName.value, formEmail.value, formMessage.value,)
   
+  const escapeHtml = (str) => {
+    var map ={
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return str.replace(/[&<>"']/g, (m) => map[m]);
+  };
+  let escapedName = await escapeHtml(formName.value);
+  let escapedEmail = await escapeHtml(formEmail.value);
+  let escapedMessage = await escapeHtml(formMessage.value);
+
   const data = await {
-    name: formName.value,
-    email: formEmail.value,
-    message: formMessage.value 
+    name: escapedName,
+    email: escapedEmail,
+    message: escapedMessage 
   }
-  
+
+  // const data = await {
+  //   name: formName.value,
+  //   email: formEmail.value,
+  //   message: formMessage.value 
+  // }
+
+  // console.log("data ==> ", data)
+
   if( formName.value == "" ||  formEmail.value == "" || formMessage.value == "") {
     modalText.textContent = "Missing required fields."
     formResModal.style.display = "flex";

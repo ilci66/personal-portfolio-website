@@ -8,6 +8,23 @@ const Form = require('../db/form_model.js')
 router.post('/contact', async (req, res, next) => {
   const { name, email, message } = req.body
 
+  const decodeHtml = (str) => {
+    var map = {
+      '&amp;': '&',
+      '&lt;': '<',
+      '&gt;': '>',
+      '&quot;': '"',
+      '&#039;': "'"
+    };
+    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, (m) => map[m]);
+  }
+
+  let decodedName = await decodeHtml(name);
+  let decodedEmail = await decodeHtml(email);
+  let decodedMessage = await decodeHtml(message);
+
+  // console.log("in backend ==>",decodedName, decodedEmail, decodedMessage)
+
   if(name == "" || email == "", message == "") {
     return res.status(400).json({ message: "Missing required fields." })
   } else {
