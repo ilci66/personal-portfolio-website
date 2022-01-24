@@ -14,14 +14,14 @@ const modalText = document.querySelector('.form-res-text');
 const sideBar = document.querySelector('.side-bar');
 const menuArrow = document.querySelector('.menu-arrow');
 
-const testFunc = (e) => console.log('clicked!!')
+// const testFunc = (e) => console.log('clicked!!')
 
-topTilte.addEventListener('click', (e) => console.log("works"))
+// topTilte.addEventListener('click', (e) => console.log("works"))
 
 menuArrow.addEventListener('click', () => {
   testFunc()
-  console.log(menuArrow.classList.contains('move-right'))
-  console.log(menuArrow.classList)
+  // console.log(menuArrow.classList.contains('move-right'))
+  // console.log(menuArrow.classList)
   if(!menuArrow.classList.contains('move-right')) {
     menuArrow.classList.add('move-right');
     menuArrow.style.transform = "rotate(180deg)";
@@ -52,37 +52,44 @@ submitForm.addEventListener('submit', async (e) => {
   e.preventDefault(); 
 
 
-  console.log(formName.value, formEmail.value, formMessage.value,)
+  // console.log(formName.value, formEmail.value, formMessage.value,)
   
   const data = await {
     name: formName.value,
     email: formEmail.value,
     message: formMessage.value 
   }
-
-  fetch(`/contact`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-    formName.value = ""
-    formEmail.value = ""
-    formMessage.value = ""
-
-    // const smileIcon = document.createElement('span')
-    // smileIcon.classList.add("fa-smile-beam")
-    modalText.textContent = data.message
-    // modalText.append(smileIcon)
+  
+  if( formName.value == "" ||  formEmail.value == "" || formMessage.value == "") {
+    modalText.textContent = "Missing required fields."
     formResModal.style.display = "flex";
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+    return
+  }else {
+    fetch(`/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      formName.value = ""
+      formEmail.value = ""
+      formMessage.value = ""
+
+      // const smileIcon = document.createElement('span')
+      // smileIcon.classList.add("fa-smile-beam")
+      modalText.textContent = data.message
+      // modalText.append(smileIcon)
+      formResModal.style.display = "flex";
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
   
   // console.log('submit stuff')
 })
@@ -91,4 +98,4 @@ modalClose.addEventListener('click', () => {
   formResModal.style.display = "none";
 })
 
-console.log("so far so good")
+// console.log("so far so good")
