@@ -969,7 +969,7 @@ div { flex-grow: 1 }
       }
       .contact-text {
         margin-bottom: $s-size;
-        font-size: $l-t;
+        font-size: $m-t;
       }
     }
     .send-msg-form {
@@ -1018,14 +1018,14 @@ div { flex-grow: 1 }
       align-items: center;
       justify-content: center;
       .contact-title{
-        font-size: $xxl-t;
+        // font-size: $xl-t;
         margin-bottom: $m-size;
         font-weight: bold;
       }
-      .contact-text {
-        margin-bottom: $s-size;
-        font-size: $l-t;
-      }
+      // .contact-text {
+      //   margin-bottom: $m-size;
+      //   font-size: $l-t;
+      // }
     }
     .send-msg-form {
       display:flex;
@@ -1069,6 +1069,14 @@ div { flex-grow: 1 }
     .send-msg-btn {
       padding: $s-size $m-size ;
       font-size: $l-t;
+    }
+    .contact-info{
+      .contact-title{
+        font-size: $xl-t;
+      }
+      .contact-text{
+        font-size: $m-t;
+      }
     }
     .form-res-modal {
       .form-res-container {
