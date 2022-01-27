@@ -474,8 +474,16 @@ div { flex-grow: 1 }
         padding: $m-size;
         // justify-content: center;
         align-items: center;
+        .underline {
+          text-decoration: underline 2px;
+          margin-bottom: $s-size;
+        }
+        .grid-list {
+          font-size: $m-l-t;
+          text-align: center;
+        }
         .project-title {
-          font-size: $m-t;
+          font-size: $m-l-t;
           font-weight: bold;
         }
         .project-text {
