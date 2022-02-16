@@ -293,13 +293,13 @@ div { flex-grow: 1 }
   background-size: cover;
 }
 .por-sec {
-  background: $gradient-bg-2;
+  // background: $gradient-bg-2;
 }
 .abo-sec {
-  background: $gradient-bg;
+  // background: $gradient-bg;
 }
 .con-sec {
-  background: $gradient-bg-2;
+  // background: $gradient-bg-2;
 }
 .side-bar {
   width: 25%;
@@ -813,6 +813,10 @@ div { flex-grow: 1 }
   }
   .menu-arrow {
     display: block;
+  //      -webkit-backface-visibility: hidden;
+  //  -moz-backface-visibility: hidden;
+
+  //  backface-visibility: hidden;
   }
   .top-container{ 
     padding: $xl-size;
